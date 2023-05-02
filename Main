@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string name;
+	int id;
+	double units, chrg, cost, tax, total;
+	cout<<"\n*********WELCOME***********\n";
+	cout<<"Electrcity Bill Calculator:\n";
+	cout<<"\t\n";
+	cout<<"Enter your Name: ";
+	getline(cin,name);
+	cout<<"Enter ID: ";
+	cin>>id;
+	cout<<"Enter the unit consumed by the customer: ";
+	cin>>units;
+	if(units>=0 && units<=100)
+	{
+		cost=units*1;
+	}
+	else if(units>100 && units<=200)
+	{
+		cost=((units-100)*3)+100;
+	}
+	else if(units>200 && units<=300)
+	{
+		cost=((units-200)*4)+200;
+	}
+	else if(units>300 && units<=400)
+	{
+		cost=((units-300)*5)+300;
+	}
+	else
+	{
+		cost=((units-500)*6)+1400;
+	}
+	//Pakistan government tax
+	tax=(cost*10)/100;
+	total=cost+50+tax;
+
+	cout<<"\n\nCoustomer ID: "<<id<<endl;
+	cout<<"Coustomer Name: "<<name<<endl;
+	cout<<"Unit Consumed by Customer: "<<units<<endl;
+	cout<<"Bill of Units without tax is: "<<cost<<" Rs."<<endl;
+	cout<<"Meter Charges : 50 Rs."<<endl;
+	cout<<"Tax is: "<<tax<<endl;
+	cout<<"Total Bill Pay by Customer: "<<total<<endl;
+	cout<<"Thanks for Using our Calculator!\n";
+
+
+}
